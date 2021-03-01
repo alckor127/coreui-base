@@ -1,5 +1,6 @@
 import React from "react";
 import { Content, Sidebar, Header, Footer } from "layouts";
+import { CToaster } from "@coreui/react";
 
 const Layout = () => {
   return (
@@ -12,6 +13,7 @@ const Layout = () => {
         </div>
         <Footer />
       </div>
+      <CToaster position="top-right" />
     </div>
   );
 };
