@@ -31,7 +31,11 @@ const schema = yup.object().shape({
   name: yup.string().required(),
   description: yup
     .string()
-    .test("description", "${path} is a required field", (value) => value !== "<p><br></p>")
+    .test(
+      "description",
+      "${path} is a required field",
+      (value) => value !== "<p><br></p>"
+    )
     .required(),
   price: yup.number().required(),
   compareAtPrice: yup.number().required(),
@@ -40,7 +44,15 @@ const schema = yup.object().shape({
 });
 
 const NewCustomer = () => {
-  const { register, handleSubmit, watch, errors, control, setValue, getValues } = useForm({
+  const {
+    register,
+    handleSubmit,
+    watch,
+    errors,
+    control,
+    setValue,
+    getValues,
+  } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
       name: "",
@@ -70,7 +82,7 @@ const NewCustomer = () => {
       <CRow>
         <CCol xs="12" md="8">
           <CCard>
-            <CCardHeader>
+            <CCardHeader className="d-flex align-items-center justify-content-between">
               <strong>Producto</strong>
             </CCardHeader>
             <CCardBody>
@@ -99,7 +111,9 @@ const NewCustomer = () => {
                     />
                   )}
                 />
-                <CInvalidFeedback>{errors.description?.message}</CInvalidFeedback>
+                <CInvalidFeedback>
+                  {errors.description?.message}
+                </CInvalidFeedback>
               </CFormGroup>
             </CCardBody>
           </CCard>
@@ -128,7 +142,9 @@ const NewCustomer = () => {
                 </CCol>
                 <CCol md="6">
                   <CLabel>Precio de comparación</CLabel>
-                  <CInputGroup className={errors.compareAtPrice ? "is-invalid" : null}>
+                  <CInputGroup
+                    className={errors.compareAtPrice ? "is-invalid" : null}
+                  >
                     <CInputGroupPrepend>
                       <CInputGroupText>S/.</CInputGroupText>
                     </CInputGroupPrepend>
@@ -150,14 +166,18 @@ const NewCustomer = () => {
                       </CInputGroupText>
                     </CInputGroupAppend>
                   </CInputGroup>
-                  <CInvalidFeedback>{errors.compareAtPrice?.message}</CInvalidFeedback>
+                  <CInvalidFeedback>
+                    {errors.compareAtPrice?.message}
+                  </CInvalidFeedback>
                 </CCol>
               </CFormGroup>
               <hr />
               <CFormGroup row>
                 <CCol md="6">
                   <CLabel>Costo por artículo</CLabel>
-                  <CInputGroup className={errors.unitCost ? "is-invalid" : null}>
+                  <CInputGroup
+                    className={errors.unitCost ? "is-invalid" : null}
+                  >
                     <CInputGroupPrepend>
                       <CInputGroupText>S/.</CInputGroupText>
                     </CInputGroupPrepend>
@@ -172,7 +192,9 @@ const NewCustomer = () => {
                   <div className="help-block">
                     <small>Los clientes no verán esta información.</small>
                   </div>
-                  <CInvalidFeedback>{errors.unitCost?.message}</CInvalidFeedback>
+                  <CInvalidFeedback>
+                    {errors.unitCost?.message}
+                  </CInvalidFeedback>
                 </CCol>
                 <CCol md="3">
                   <CLabel>Margen</CLabel>
@@ -184,7 +206,12 @@ const NewCustomer = () => {
                 </CCol>
               </CFormGroup>
               <CFormGroup variant="custom-checkbox">
-                <CInputCheckbox custom id="Taxable" name="taxable" innerRef={register} />
+                <CInputCheckbox
+                  custom
+                  id="Taxable"
+                  name="taxable"
+                  innerRef={register}
+                />
                 <CLabel variant="custom-checkbox" htmlFor="Taxable">
                   Cobrar impuesto sobre la venta de este producto
                 </CLabel>
@@ -203,7 +230,9 @@ const NewCustomer = () => {
               </CSelect>
             </CCardBody>
             <CCardFooter>
-              <CButton color="primary" type="submit">Enviar</CButton>
+              <CButton color="primary" type="submit">
+                Enviar
+              </CButton>
             </CCardFooter>
           </CCard>
         </CCol>

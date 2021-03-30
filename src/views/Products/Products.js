@@ -1,6 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { CCol, CRow, CCard, CCardBody, CCardHeader, CButton } from "@coreui/react";
+import {
+  CCol,
+  CRow,
+  CCard,
+  CCardBody,
+  CCardHeader,
+  CButton,
+} from "@coreui/react";
 
 const Products = () => {
   const history = useHistory();
@@ -9,7 +16,7 @@ const Products = () => {
     <CRow>
       <CCol xs="12">
         <CCard>
-          <CCardHeader>
+          <CCardHeader className="d-flex align-items-center justify-content-between">
             <strong>Productos</strong>
             <div className="card-header-actions">
               <CButton variant="ghost" color="dark" size="sm">
@@ -23,11 +30,15 @@ const Products = () => {
                 <div className="text-center">
                   <h3>Agregar y gestionar tus productos</h3>
                   <p>
-                    Aquí es donde agregarás productos y gestionarás tus precios. También puedes importar y exportar tu
-                    inventario de productos.
+                    Aquí es donde agregarás productos y gestionarás tus precios.
+                    También puedes importar y exportar tu inventario de
+                    productos.
                   </p>
                   <div className="my-5 pt-2 pb-4">
-                    <CButton color="primary" onClick={() => history.push("/products/new")}>
+                    <CButton
+                      color="primary"
+                      onClick={() => history.push("/products/new")}
+                    >
                       Agregar producto
                     </CButton>
                     <CButton variant="ghost" color="dark">

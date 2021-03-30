@@ -24,7 +24,7 @@ const Inventory = () => {
     <CRow>
       <CCol xs="12">
         <CCard>
-          <CCardHeader>
+          <CCardHeader className="d-flex align-items-center justify-content-between">
             <strong>Inventario</strong>
           </CCardHeader>
           <CCardBody>

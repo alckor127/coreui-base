@@ -23,6 +23,12 @@ const navigation = [
       },
     ],
   },
+  {
+    _tag: "CSidebarNavItem",
+    name: "Field Array",
+    to: "/field-array",
+    icon: "cil-code",
+  },
 ];
 
 export { navigation };
