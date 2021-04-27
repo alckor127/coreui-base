@@ -29,6 +29,12 @@ const navigation = [
     to: "/field-array",
     icon: "cil-code",
   },
+  {
+    _tag: "CSidebarNavItem",
+    name: "Formularios",
+    to: "/forms",
+    icon: "cil-heart"
+  }
 ];
 
 export { navigation };

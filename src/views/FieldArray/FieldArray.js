@@ -31,11 +31,18 @@ const FieldArray = () => {
         artist: yup.string().required(),
       })
     ),
+    defaultValues: {
+      artist: "",
+      songs: [
+        { title: "" }
+      ]
+    }
   });
 
   const { fields, append, remove } = useFieldArray({
     control,
     name: "songs",
+    keyName: "key"
   });
 
   const onSubmit = (data) => console.log("data", data);
@@ -60,13 +67,13 @@ const FieldArray = () => {
                   name="artist"
                   placeholder="J Balvín"
                   invalid={errors.artist ? true : false}
-                  innerRef={register}
+                  innerRef={register()}
                 />
                 <CInvalidFeedback>{errors.artist?.message}</CInvalidFeedback>
               </CFormGroup>
               {fields.map((field, idx) => (
-                <CFormGroup key={fields.id}>
-                  <CLabel>Canción {idx}</CLabel>
+                <CFormGroup key={field.key}>
+                  <CLabel>Canción {idx + 1}</CLabel>
                   <CInputGroup>
                     <CInput
                       name={`songs[${idx}].title`}
