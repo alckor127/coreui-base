@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useForm, useFieldArray } from "react-hook-form"
 import { CCol, CRow, CCard, CCardBody, CCardHeader, CForm, CFormGroup, CLabel, CInput, CSelect, CButton } from "@coreui/react";
 import CIcon from "@coreui/icons-react"
 import { formType as options, camelCase } from "utils"
 import { PlaceholderAttr, RequiredAttr, RowsAttr } from "./Attrs"
 
-const RenderFieldAttr = ({nestIndex, type, register, control }) => {
+const RenderFieldAttr = ({nestIndex, type, register }) => {
   switch (type) {
     case "TextareaType":
       return (
