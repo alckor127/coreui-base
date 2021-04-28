@@ -4,7 +4,10 @@
 // Import CoreUI styles
 @import "~@coreui/coreui/scss/coreui.scss";
 
-// import Plugins
+// Import Components
+@import "components/forms.scss";
+
+// Import Plugins
 @import "plugins/react-quill";
 
 // If you want to add something do it here

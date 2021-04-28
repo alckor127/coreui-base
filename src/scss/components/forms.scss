@@ -1,0 +1,10 @@
+.form-horizontal {
+    .form-group {
+        &.row {
+            [class^="col"] {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
