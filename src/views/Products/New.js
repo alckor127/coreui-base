@@ -33,7 +33,7 @@ const schema = yup.object().shape({
     .string()
     .test(
       "description",
-      "${path} is a required field",
+      "description is a required field", // "${path} is a required field",
       (value) => value !== "<p><br></p>"
     )
     .required(),

@@ -23,6 +23,10 @@ const RenderFieldAttr = ({nestIndex, type, register }) => {
           <RequiredAttr nestIndex={nestIndex} {...{ register }} />
         </React.Fragment>
       )
+    case "ButtonType":
+    case "ResetType":
+    case "SubmitType":
+      return null
     default:
       return (
         <React.Fragment>
